@@ -13,10 +13,7 @@ FalconEye is a real-time object detection application built to safeguard astrona
 - Accurate detection in dynamic, zero-gravity conditions
 ## App Demo  
 ![FalconEye Demo](docs/FalconEye_Demo.gif)  
-[🔊 Watch with sound (MP4)](docs/FalconEye_Demo.mp4)
-
-
-
+[🔊 Watch with sound (MP4)](docs/FalconEye_Demo.mp4)  
 
 ## 🛠 Dataset & Training  
 - Dataset: Falcon simulated synthetic dataset targeting oxygen cylinders, toolboxes, and fire extinguishers  
@@ -47,11 +44,11 @@ FalconEye is a real-time object detection application built to safeguard astrona
 1. Clone this repository  
 2. Install dependencies:  
    ```bash
-   pip install -r requirements.txt
-
-## Launch the app with Streamlit:
-  streamlit run app.py  
-- Use the webcam, upload your own images, or select from built-in example images to detect mission-critical objects in real-time
+   pip install -r requirements.txt  
+3. Launch the app with Streamlit:
+   ```bash  
+    streamlit run app.py  
+4. Use the webcam, upload your own images, or select from built-in example images to detect mission-critical objects in real-time
 
 ## 🎯 Future Enhancements  
 

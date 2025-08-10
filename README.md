@@ -2,14 +2,19 @@
 
 ## 🚀 About FalconEye
 
-FalconEye is a real-time object detection application built to safeguard astronauts in the zero-gravity environment of space stations. Equipped with a YOLOv8 model trained on a mission-specific dataset, it can accurately detect critical items — like **oxygen cylinders, toolboxes, and fire extinguishers** — even in dynamic, unpredictable conditions. It provides:  
+FalconEye is a real-time object detection application built to safeguard astronauts in the zero-gravity environment of space stations. Equipped with a YOLOv8 model trained on a mission-specific dataset, it can accurately detect critical items — like **oxygen cylinders, toolboxes, and fire extinguishers** — even in dynamic, unpredictable conditions.  
+## ⭐Features   
 
 - Real-time detection via webcam feed or static images  
 - Audio announcements of detected objects with confidence scores  
 - Model selection dropdown for easy updates  
 - Display of total objects detected per frame and saves results  
 - User-friendly UI designed for non-technical users in critical environments  
-- Accurate detection in dynamic, zero-gravity conditions  
+- Accurate detection in dynamic, zero-gravity conditions
+## App Demo  
+![FalconEye Demo](docs/FalconEye_Demo.gif)
+
+
 
 ## 🛠 Dataset & Training  
 - Dataset: Falcon simulated synthetic dataset targeting oxygen cylinders, toolboxes, and fire extinguishers  

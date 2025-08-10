@@ -46,9 +46,10 @@ FalconEye is a real-time object detection application built to safeguard astrona
 - Built with Streamlit for fast prototyping and a clean UI  
 - Supports live webcam and image upload detection through browse files and example images  
 - Lightweight and suitable for deployment in constrained environments
+<p align="centre">
+    <img src="docs/Detection_example.png" width="500">
+</p>
 
-   
-![Detection Example:](docs/Detection_example.png)
 
 ## ⚙️ How to Run  
 1. Clone this repository  

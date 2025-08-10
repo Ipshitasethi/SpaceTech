@@ -1,0 +1,9 @@
+# FalconEye Project Configuration
+
+paths:
+  examples: examples/    # folder for sample images/videos
+  results: runs/         # where detection outputs will be saved
+  models: model/   
+
+model:
+  default: app/model/alternate.pt

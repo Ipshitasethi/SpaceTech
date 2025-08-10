@@ -18,11 +18,9 @@ FalconEye is a real-time object detection application built to safeguard astrona
 
 ## 📊 Model Performance
 <p align="center">
-  <img src="results/confusion_matrix.png" width="500">  
-    <img src="results/confusion_matrix.png" width="500">  
-    <img src="results/confusion_matrix.png" width="500">
-</p>
-
+    <img src="results/confusion_matrix_normalized.png" width="500">  
+  <img src="results/val_batch2_pred.jpg" width="500">
+</p>  
 
 ## 🛠 Dataset & Training  
 - Dataset: Falcon simulated synthetic dataset targeting oxygen cylinders, toolboxes, and fire extinguishers  

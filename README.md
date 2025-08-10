@@ -1,10 +1,8 @@
 # FalconEye — Adaptive Object Detection for Space Station Safety
 
-## 🚀 Problem Statement  
-In the zero-gravity environment of a space station, vital items like **oxygen cylinders**, **fire extinguishers**, and **toolboxes** can drift or become misplaced, posing serious safety risks. Current monitoring methods lack the intelligence and immediacy needed for real-time prevention.
+## 🚀 About FalconEye
 
-## 💡 Solution Overview  
-FalconEye is a real-time object detection application using a YOLOv8 model trained on a mission-specific synthetic dataset. It provides:
+FalconEye is a real-time object detection application built to safeguard astronauts in the zero-gravity environment of space stations. Equipped with a YOLOv8 model trained on a mission-specific dataset, it can accurately detect critical items — like **oxygen cylinders, toolboxes, and fire extinguishers** — even in dynamic, unpredictable conditions. It provides:  
 
 - Real-time detection via webcam feed or static images  
 - Audio announcements of detected objects with confidence scores  
@@ -55,6 +53,7 @@ FalconEye is a real-time object detection application using a YOLOv8 model train
 - **Dynamic Scenario Training:** Use Falcon Editor to simulate challenging space conditions like lighting shifts, occlusion, moving tools, and emergency drills. Continuously retrain the model on evolving mission scenarios for improved generalization.  
 
 - **Cloud & Mission Control Integration:** Deploy the system on cloud servers for real-time monitoring from ground stations. Enable mission control to review logs, receive alerts, and analyze safety compliance remotely.  
+
  
 # 🧑‍💻 Contributors
 Team: **SnapCode**  

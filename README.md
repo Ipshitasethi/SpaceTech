@@ -12,7 +12,7 @@ FalconEye is a real-time object detection application built to safeguard astrona
 - User-friendly UI designed for non-technical users in critical environments  
 - Accurate detection in dynamic, zero-gravity conditions
 ## App Demo  
-![FalconEye Demo](docs/FalconEye_Demo.gif)
+![FalconEye Demo](docs/FalconEye_demo.gif)
 
 
 

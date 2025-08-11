@@ -105,7 +105,8 @@ with st.sidebar:
     - Lavanya Sharma  
     """)
     st.markdown("---")
-    model_name = st.selectbox("📦 Select YOLO Model", os.listdir(MODELS_PATH))
+    model_files = [f for f in os.listdir(MODELS_PATH) if f.endswith((".pt", ".onnx"))]
+    model_name = st.selectbox("📦 Select YOLO Model", model_files)
     confidence = st.slider("🎯 Confidence Threshold", 0.1, 1.0, 0.25, step=0.01)
     enable_speech = st.checkbox("🗣 Enable Voice Feedback", value=True)
 
@@ -114,7 +115,8 @@ with st.sidebar:
 def load_model(path):
     return YOLO(path)
 
-model = load_model(f"{MODELS_PATH}{model_name}")
+model = load_model(os.path.join(MODELS_PATH, model_name))
+
 
 # --- HEADER & BANNER ---
 st.image("https://images.unsplash.com/photo-1581090700227-1e7e54bc59f4", use_container_width=True)

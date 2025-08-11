@@ -123,7 +123,7 @@ def load_model(path, model_name):
     print(f"Loading model '{model_name}' from: {path}")
     return YOLO(path)
 
-model = load_model(os.path.join(MODELS_PATH, model_name), model_name)
+model = load_model(model_path, model_name)
 
 
 

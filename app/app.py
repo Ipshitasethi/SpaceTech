@@ -111,7 +111,7 @@ with st.sidebar:
     enable_speech = st.checkbox("🗣 Enable Voice Feedback", value=True)
 
 # --- LOAD MODEL ---
-@st.cache_resource(show_spinner=False, persist=True)
+@st.cache_resource(show_spinner=False)
 def load_model(path, model_name):
     print(f"Loading model '{model_name}' from: {path}")
     return YOLO(path)

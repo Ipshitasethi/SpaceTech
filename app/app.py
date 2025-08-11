@@ -31,6 +31,11 @@ with open(CONFIG_PATH, "r") as f:
 EXAMPLES_PATH = os.path.abspath(os.path.join(BASE_DIR, CONFIG["paths"]["examples"]))
 MODELS_PATH = os.path.abspath(os.path.join(BASE_DIR, CONFIG["paths"]["models"]))
 
+model_path = os.path.join(MODELS_PATH, model_name)
+st.write(f"Model path: {model_path}")
+st.write(f"File exists: {os.path.exists(model_path)}")
+st.write(f"File size: {os.path.getsize(model_path) if os.path.exists(model_path) else 'N/A'} bytes")
+
 
 
 

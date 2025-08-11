@@ -1,7 +1,3 @@
 # Ignore training outputs, logs, checkpoints
 runs/
 
-# Ignore large model binaries (adjust extensions as per your models)
-model/alternate.pt
-model/best.pt
-model/fire safety.pt

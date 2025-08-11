@@ -121,7 +121,6 @@ st.write(f"File size: {os.path.getsize(model_path) if os.path.exists(model_path)
 @st.cache_resource(show_spinner=False)
 def load_model(path, model_name):
     print(f"Loading model '{model_name}' from: {path}")
-    checkpoint = torch.load(path, map_location="cpu", weights_only=False)
     return YOLO(path)
 
 model = load_model(os.path.join(MODELS_PATH, model_name), model_name)

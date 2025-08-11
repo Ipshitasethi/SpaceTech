@@ -31,10 +31,6 @@ with open(CONFIG_PATH, "r") as f:
 EXAMPLES_PATH = os.path.abspath(os.path.join(BASE_DIR, CONFIG["paths"]["examples"]))
 MODELS_PATH = os.path.abspath(os.path.join(BASE_DIR, CONFIG["paths"]["models"]))
 
-model_path = os.path.join(MODELS_PATH, model_name)
-st.write(f"Model path: {model_path}")
-st.write(f"File exists: {os.path.exists(model_path)}")
-st.write(f"File size: {os.path.getsize(model_path) if os.path.exists(model_path) else 'N/A'} bytes")
 
 
 
@@ -114,6 +110,12 @@ with st.sidebar:
     model_name = st.selectbox("📦 Select YOLO Model", model_files)
     confidence = st.slider("🎯 Confidence Threshold", 0.1, 1.0, 0.25, step=0.01)
     enable_speech = st.checkbox("🗣 Enable Voice Feedback", value=True)
+
+model_path = os.path.join(MODELS_PATH, model_name)
+st.write(f"Model path: {model_path}")
+st.write(f"File exists: {os.path.exists(model_path)}")
+st.write(f"File size: {os.path.getsize(model_path) if os.path.exists(model_path) else 'N/A'} bytes")
+
 
 # --- LOAD MODEL ---
 @st.cache_resource(show_spinner=False)

@@ -120,10 +120,15 @@ st.write(f"File size: {os.path.getsize(model_path) if os.path.exists(model_path)
 # --- LOAD MODEL ---
 @st.cache_resource(show_spinner=False)
 def load_model(path, model_name):
+    import torch
+    from ultralytics.nn.tasks import DetectionModel
+
+    # Tell PyTorch it's safe to deserialize DetectionModel from your checkpoint
+    torch.serialization.add_safe_globals([DetectionModel])
+    
     print(f"Loading model '{model_name}' from: {path}")
     return YOLO(path)
 
-model = load_model(os.path.join(MODELS_PATH, model_name), model_name)
 
 
 

@@ -129,6 +129,7 @@ def load_model(path, model_name):
     print(f"Loading model '{model_name}' from: {path}")
     return YOLO(path)
 
+model= load_model(model_path, model_name)
 
 
 

@@ -112,9 +112,9 @@ with st.sidebar:
     enable_speech = st.checkbox("🗣 Enable Voice Feedback", value=True)
 
 model_path = os.path.join(MODELS_PATH, model_name)
-st.write(f"Model path: {model_path}")
-st.write(f"File exists: {os.path.exists(model_path)}")
-st.write(f"File size: {os.path.getsize(model_path) if os.path.exists(model_path) else 'N/A'} bytes")
+# st.write(f"Model path: {model_path}")
+# st.write(f"File exists: {os.path.exists(model_path)}")
+# st.write(f"File size: {os.path.getsize(model_path) if os.path.exists(model_path) else 'N/A'} bytes")
 
 
 # --- LOAD MODEL ---

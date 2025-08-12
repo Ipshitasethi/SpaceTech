@@ -118,18 +118,19 @@ model_path = os.path.join(MODELS_PATH, model_name)
 
 
 # --- LOAD MODEL ---
-@st.cache_resource(show_spinner=False)
 def load_model(path, model_name):
     import torch
     from ultralytics.nn.tasks import DetectionModel
 
     # Tell PyTorch it's safe to deserialize DetectionModel from your checkpoint
     torch.serialization.add_safe_globals([DetectionModel])
-    
-    print(f"Loading model '{model_name}' from: {path}")
     return YOLO(path)
 
+if "model" not in st.session_state or st.session_state.model_name != model_name:
+    st.session_state.model = load_model(model_path, model_name)
+    st.session_state.model_name = model_name
 
+model = st.session_state.model
 
 
 
@@ -202,6 +203,10 @@ elif option == "Upload Image":
         img_array = resize_frame(np.array(image))
 
         with st.spinner("🔍 Running detection..."):
+            st.write("Model:", model)
+            st.write("Image shape:", img_array.shape)
+            st.write("Confidence:", confidence)
+
             results = model.predict(img_array, conf=confidence, iou=0.5)
             boxes = results[0].boxes
 

@@ -112,6 +112,7 @@ with st.sidebar:
     enable_speech = st.checkbox("🗣 Enable Voice Feedback", value=True)
 
 model_path = os.path.join(MODELS_PATH, model_name)
+model = YOLO(model_path)
 # st.write(f"Model path: {model_path}")
 # st.write(f"File exists: {os.path.exists(model_path)}")
 # st.write(f"File size: {os.path.getsize(model_path) if os.path.exists(model_path) else 'N/A'} bytes")
@@ -202,10 +203,6 @@ elif option == "Upload Image":
         img_array = resize_frame(np.array(image))
 
         with st.spinner("🔍 Running detection..."):
-            st.write("Model:", model)
-            st.write("Image shape:", img_array.shape)
-            st.write("Confidence:", confidence)
-
             results = model.predict(img_array, conf=confidence, iou=0.5)
             boxes = results[0].boxes
 

@@ -12,6 +12,12 @@ import cv2
 from PIL import Image
 from ultralytics import YOLO
 
+app= FastAPI()
+@app.get("/")
+def root():
+    return {"message": "API is live! Welcome to YOLO Detection Service."}
+
+
 # Basic config
 DEFAULT_MODEL = "best.pt"  # you can change this to alternate.pt or fire_safety.pt
 MODEL_PATH = os.environ.get("MODEL_PATH", os.path.join("models", DEFAULT_MODEL))

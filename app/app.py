@@ -37,7 +37,7 @@ MODELS_PATH = os.path.abspath(os.path.join(BASE_DIR, CONFIG["paths"]["models"]))
 
 
 # --- PAGE CONFIG ---
-st.set_page_config(page_title="Falcon Eye", layout="wide")
+st.set_page_config(page_title="AstraSight", page_icon="🚀", layout="wide")
 
 # --- FACT DATA ---
 object_facts = {
@@ -96,6 +96,12 @@ def danger_status(detected):
 # --- SIDEBAR ---
 with st.sidebar:
     st.image("https://images.unsplash.com/photo-1446776811953-b23d57bd21aa", width=250)
+    model_files = [f for f in os.listdir(MODELS_PATH) if f.endswith((".pt", ".onnx"))]
+    model_name = st.selectbox("📦 Select YOLO Model", model_files)
+    confidence = st.slider("🎯 Confidence Threshold", 0.1, 1.0, 0.25, step=0.01)
+    enable_speech = st.checkbox("🗣 Enable Voice Feedback", value=True)
+    st.markdown("---")
+
     st.markdown("""### ✨ AstraSight – Key Features
 - 🔍 Real-Time Object Detection using YOLOv8
 - 🧠 Multi-Class Tracking for mission-critical items
@@ -104,7 +110,6 @@ with st.sidebar:
 - 📊 Object Count & Frame Logging
 
 """)
-
     st.markdown("### 🤖 Team Name: Visionaries11:11")
     st.markdown("""
     Members:  
@@ -115,11 +120,6 @@ with st.sidebar:
     - Lavanya Sharma 
     - Khushi Ajwani 
     """)
-    st.markdown("---")
-    model_files = [f for f in os.listdir(MODELS_PATH) if f.endswith((".pt", ".onnx"))]
-    model_name = st.selectbox("📦 Select YOLO Model", model_files)
-    confidence = st.slider("🎯 Confidence Threshold", 0.1, 1.0, 0.25, step=0.01)
-    enable_speech = st.checkbox("🗣 Enable Voice Feedback", value=True)
 
 model_path = os.path.join(MODELS_PATH, model_name)
 model = YOLO(model_path)

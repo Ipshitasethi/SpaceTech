@@ -26,7 +26,7 @@ EXAMPLES_PATH = os.path.abspath(os.path.join(BASE_DIR, CONFIG["paths"]["examples
 MODELS_PATH = os.path.abspath(os.path.join(BASE_DIR, CONFIG["paths"]["models"]))
 
 # Backend API URL
-BACKEND_URL = "http://127.0.0.1:8000/predict"
+BACKEND_URL = "https://spacetech-fj49.onrender.com"
 
 # ------------------------ PAGE CONFIG ------------------------
 st.set_page_config(page_title="AstraSight", layout="wide")
@@ -59,7 +59,7 @@ def speak_once(label):
         speak_threaded(label)
 
 # ------------------------ HELPERS ------------------------
-def resize_frame(frame, width=640):
+def resize_frame(frame, width=320):
     h, w = frame.shape[:2]
     scale = width / w
     return cv2.resize(frame, (int(w * scale), int(h * scale)))
@@ -81,10 +81,11 @@ def predict_backend(image: Image.Image, confidence: float):
     img_bytes = buffered.getvalue()
 
     response = requests.post(
-        BACKEND_URL,
-        files={"file": ("image.jpg", img_bytes, "image/jpeg")},
-        data={"confidence": confidence}
-    )
+    f"{BACKEND_URL}/predict",
+    files={"file": ("image.jpg", img_bytes, "image/jpeg")},
+    data={"confidence": confidence}
+)
+
     response.raise_for_status()
     data = response.json()
 
@@ -136,7 +137,13 @@ if option == "Use Webcam":
     camera = cv2.VideoCapture(0)
     save_button = st.button("💾 Save Current Frame")
 
+    frame_count=0
+
     while run:
+        frame_count += 1
+        if frame_count % 2 != 0:  # skip odd frames
+            continue
+    
         ret, frame = camera.read()
         if not ret:
             st.error("Webcam not accessible.")
@@ -205,4 +212,4 @@ elif option == "Use Example Image":
 
 # ------------------------ FOOTER ------------------------
 st.markdown("---")
-st.markdown("🛠 Developed for BuildWithIndia2.0 — Microsoft + Duality AI Hackathon")
+st.markdown("🛠 Developed for SIH 2025")

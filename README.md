@@ -1,4 +1,4 @@
-# FalconEye — Adaptive Object Detection for Space Station Safety
+# AstraSight — Adaptive Object Detection for Space Station Safety
 
 ## 🚀 About FalconEye
 

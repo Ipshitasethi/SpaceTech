@@ -23,7 +23,6 @@ DEFAULT_MODEL = "best.pt"  # you can change this to alternate.pt or fire_safety.
 MODEL_PATH = os.environ.get("MODEL_PATH", os.path.join("models", DEFAULT_MODEL))
 CONFIDENCE_DEFAULT = float(os.environ.get("CONFIDENCE_DEFAULT", 0.25))
 
-app = FastAPI(title="Falcon Eye Model Server")
 
 # Allow requests from your Streamlit origin (for dev keep '*' ; tighten in prod)
 app.add_middleware(
